@@ -1,5 +1,12 @@
+name: randomized_reach
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
-  run-script:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -13,9 +20,9 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install -r requirements.txt
         pip install pygsheets pandas
 
+        
     - name: Set up secrets
       env:
         CLIENT_SECRET_JSON: ${{ secrets.CLIENT_SECRET_JSON }}
