@@ -20,5 +20,9 @@ jobs:
         run: |
           pip install pygsheets pandas
 
+      - name: Debug Environment Variables
+        run: |
+         echo "CLIENT_SECRET_JSON: $CLIENT_SECRET_JSON"
+
       - name: Run Python script
         run: python randomized_script.py
