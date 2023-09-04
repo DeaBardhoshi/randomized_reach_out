@@ -10,7 +10,7 @@ from google.oauth2.credentials import Credentials
 import os
 import pandas as pd
 
-client_secret_json = os.environ.get['CLIENT_SECRET_JSON']
+client_secret_json = os.environ['CLIENT_SECRET_JSON']
 token_json = os.environ['TOKEN_JSON']
 
 gc = pygsheets.authorize(client_secret=client_secret_json)
