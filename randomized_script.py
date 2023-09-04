@@ -13,7 +13,7 @@ import pandas as pd
 client_secret_json = os.environ['CLIENT_SECRET_JSON']
 token_json = os.environ['TOKEN_JSON']
 
-gc = pygsheets.authorize(service_account_env_var=client_secret_json)
+gc = pygsheets.authorize(service_account_env_var='CLIENT_SECRET_JSON')
 
 
 sh = gc.open('Randomized Reach Out')
