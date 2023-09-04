@@ -35,7 +35,7 @@ contact_person = random_row['Contact Method'].iloc[0]
 creds_filename = 'token.json'
 SCOPES = ["https://www.googleapis.com/auth/gmail.send"]
 if not os.path.exists(creds_filename):
-	flow = InstalledAppFlow.from_client_secrets_file('client_secret.json', SCOPES)
+	flow = Credentials.from_authorized_user_info(token_json, SCOPES)
 	creds = flow.run_local_server(port=0)
 	with open(creds_filename, 'w') as token:
 		token.write(creds.to_json())
